@@ -23,7 +23,7 @@ export async function POST() {
     for (const c of conversations) {
       if (c.user) userIds.add(c.user);
     }
-    const userNames = await getUsersInfo(token, [...userIds]);
+    const userNames = await getUsersInfo(token, Array.from(userIds));
 
     let totalAdded = 0;
     const limitPerChannel = 50; // messages per conversation to analyze
